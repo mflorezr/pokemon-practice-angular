@@ -1,14 +1,15 @@
 import { Injectable } from '@angular/core';
-import { HttpApiService } from '../../http-api.service';
+import { environment } from 'src/environments/environment';
+import { ApiHttpConnection } from '../../api-http-connection.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class PokemonInformationService {
-  private pokemonUrl = "https://pokeapi.co/api/v2/pokemon/";
-  private pokemonFeatures = "https://pokeapi.co/api/v2/pokemon-species/";
+  private pokemonUrl = environment.pokemonUrl;
+  private pokemonFeatures = environment.pokemonSpecieUrl;
 
-  constructor(private http: HttpApiService) { }
+  constructor(private http: ApiHttpConnection) { }
 
   getCurrentPokemon(name: string) {
     return this.http.getAll(this.pokemonUrl + name);

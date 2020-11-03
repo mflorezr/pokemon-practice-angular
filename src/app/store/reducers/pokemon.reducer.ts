@@ -6,18 +6,20 @@ import * as PokemonActions from '../actions/pokemon.actions'
 export const pokemonFeatureKey = 'reducer';
 
 export interface AppState {
-  pokemonList: any[],
+  pokemonList: Pokemon[],
   pokemonFeatures: Pokemon[],
   pokemonSelected: Pokemon,
+  pokemonCardName: string,
   pokemonToCompare: Pokemon,
-  pokemonsToShow: any[],
-  favoritePokemons: any[]
+  pokemonsToShow: Pokemon[],
+  favoritePokemons: number[]
 }
 
 export const initialState: AppState = {
   pokemonList: [],
   pokemonFeatures: [],
   pokemonSelected: undefined,
+  pokemonCardName: undefined,
   pokemonToCompare: undefined,
   pokemonsToShow: [],
   favoritePokemons: [1, 2, 3]
@@ -42,6 +44,12 @@ export const reducer = createReducer(
     return {
       ...state,
       pokemonSelected: action.pokemonSelected
+    }
+  }),
+  on(PokemonActions.saveCardName, (state, action) => {
+    return {
+      ...state,
+      pokemonCardName: action.pokemonName
     }
   }),
   on(PokemonActions.comparePokemonTo, (state, action) => {
@@ -69,4 +77,3 @@ export const reducer = createReducer(
     }
   })
 );
-

@@ -1,0 +1,10 @@
+<div *ngIf="isFavorite">
+  <mat-icon aria-hidden="false" (click)="onFavorite($event)">
+    favorite
+  </mat-icon>
+</div>
+<div *ngIf="!isFavorite">
+  <mat-icon aria-hidden="false" (click)="onFavorite($event)">
+    favorite_border
+  </mat-icon>
+</div>

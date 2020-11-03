@@ -2,26 +2,41 @@ import { createAction, props } from '@ngrx/store';
 import { Pokemon } from 'src/app/models/pokemon.model';
 
 export const getPokemonFromApi = createAction(
-  '[Pokemon List] Get List',
+  '[Pokemon Api] Get List',
 );
 
 export const loadPokemonList = createAction(
   '[Pokemon List] Save List',
-  props<{ pokemons: any[] }>()
+  props<{ pokemons: Pokemon[] }>()
 );
 
 export const setPokemonsToShow = createAction(
   '[Pokemon List] Show Pokemons',
-  props<{ pokemonsToShow: any[] }>()
+  props<{ pokemonsToShow: Pokemon[] }>()
 );
 
-export const selectPokemonCard = createAction(
-  '[Pokemon Card] Select',
+export const clickToShow = createAction(
+  '[Pokemon Card] Select to Show',
+  props<{ name: string }>()
+);
+
+export const getInfoToShow = createAction(
+  '[Pokemon Api] Get Info to Show',
+  props<{ name: string }>()
+);
+
+export const getInfoToCompare = createAction(
+  '[Pokemon Api] Get Info to Compare',
+  props<{ name: string }>()
+);
+
+export const clickToCompare = createAction(
+  '[Pokemon Card] Select to Compare',
   props<{ name: string }>()
 );
 
 export const savePokemon = createAction(
-  '[Pokemon Features] Save',
+  '[Pokemon Info] Save',
   props<{ currentPokemon: Pokemon }>()
 );
 
@@ -30,8 +45,14 @@ export const showPokemonDetails = createAction(
   props<{ pokemonSelected: Pokemon }>()
 );
 
-export const selectToCompare = createAction(
-  '[Info Dialog] Compare'
+export const activeComparation = createAction(
+  '[Info Dialog] Compare',
+  props<{ pokemonName: string }>()
+);
+
+export const saveCardName = createAction(
+  '[Comparation Card] Update',
+  props<{ pokemonName: string }>()
 );
 
 export const comparePokemonTo = createAction(
@@ -45,7 +66,7 @@ export const lookFor = createAction(
 );
 
 export const favorite = createAction(
-  '[Pokemon Card] Add To Favorite',
+  '[Favorite Icon] Add To Favorite',
   props<{ id: number }>()
 );
 
@@ -55,7 +76,7 @@ export const addToFavorite = createAction(
 );
 
 export const unfavorite = createAction(
-  '[Pokemon Card] No Favorite',
+  '[Favorite Icon] No Favorite',
   props<{ id: number }>()
 );
 

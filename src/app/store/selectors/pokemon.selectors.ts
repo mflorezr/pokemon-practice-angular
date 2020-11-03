@@ -9,3 +9,23 @@ export const selectFromStore = createSelector(
   selectFeatures,
   (state: fromPokemonReducer.AppState) => state
 );
+
+export const selectPokemonList = createSelector(
+  selectFeatures,
+  (state: fromPokemonReducer.AppState) => state.pokemonList
+);
+
+export const selectPokemonFeatures = createSelector(
+  selectFeatures,
+  (state: fromPokemonReducer.AppState) => state.pokemonFeatures
+);
+
+export const selectFavorites = createSelector(
+  selectFeatures,
+  (state: fromPokemonReducer.AppState) => state.favoritePokemons
+);
+
+export const selectCardName = createSelector(
+  selectFeatures,
+  (state: fromPokemonReducer.AppState) => state.pokemonCardName
+);

@@ -1,0 +1,35 @@
+.pokemon-card {
+  width: 11rem;
+  border: 1px solid var(--border-color);
+  border-radius: 3%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 1rem;
+  position: relative;
+  cursor: pointer;
+}
+
+.pokemon-image-container {
+  width: 100%; 
+}
+
+.pokemon-image {
+  width: 100%;
+}
+
+.pokemon-name {
+  width: 100%;
+  border-top: 1px solid var(--border-color);
+  text-align: center;
+  background-color: var(--name-background);
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: 0.2rem;
+}
+
+.isFavorite {
+  position: absolute;
+  bottom: 10rem;
+  right: 1rem;
+}

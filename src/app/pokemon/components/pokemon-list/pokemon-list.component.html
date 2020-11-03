@@ -1,0 +1,6 @@
+<app-nav-bar></app-nav-bar>
+<app-comparation-card></app-comparation-card>
+<div class="pokemon-list" infinite-scroll [infiniteScrollDistance]="0.1" (scrolled)="onScrollDown()">
+  <app-pokemon-card *ngFor="let pokemon of pokemons" [pokemon]="pokemon" [pokemonImage]="imgSrc + pokemon.id + '.png'">
+  </app-pokemon-card>
+</div>
