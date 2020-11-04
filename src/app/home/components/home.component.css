@@ -92,6 +92,7 @@
 }
 
 @media (min-width:0px) and (max-width:576px) {
+
   .container-pokemon-title {
     width: 20rem;
   }
@@ -107,4 +108,5 @@
   .carousel {
     width: 18rem;
   }
+  
 }

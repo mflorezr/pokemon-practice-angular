@@ -55,7 +55,7 @@ export class PokemonCardComponent implements OnInit, OnDestroy {
     this.compareSubscription.unsubscribe();
   }
 
-  onClickPokemon(pokemon: any) {
+  clickPokemon(pokemon: Pokemon) {
     if (this.compare) {
       this.store.dispatch(clickToCompare({ name: pokemon.name }));
     } else {

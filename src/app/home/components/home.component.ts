@@ -19,9 +19,9 @@ export class HomeComponent implements OnDestroy {
       select(selectFavorites))
       .subscribe(
         favoritePokemons => {
-          favoritePokemons.map(
+          this.slides = favoritePokemons.map(
             pokemonId => {
-              this.slides.push({ path: this.url + pokemonId + '.png' });
+              return { path: this.url + pokemonId + '.png' };
             }
           );
         }

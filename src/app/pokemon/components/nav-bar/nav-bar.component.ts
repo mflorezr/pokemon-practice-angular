@@ -11,7 +11,7 @@ export class NavBarComponent {
 
   constructor(private store: Store) { }
 
-  onKeyInput(value: string) {
+  lookFor(value: string) {
     this.store.dispatch(lookFor({ word: value.toLowerCase() }));
   }
 }

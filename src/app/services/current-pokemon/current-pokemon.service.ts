@@ -22,7 +22,7 @@ export class CurrentPokemonService {
     let newPokemon: Pokemon;
     return combineLatest([this.info.getCurrentPokemon(name), this.info.getFeatures(name)])
       .pipe(
-        map(([pokemon, features]: [Pokemon, Pokemon]) => {
+        map(([pokemon, features]) => {
           newPokemon =
           {
             id: pokemon.id,

@@ -22,12 +22,12 @@ export class PokemonEffects {
       mergeMap(() => this.listService.getAllPokemons()
         .pipe(
           map(pokemons => PokemonActions.loadPokemonList({
-            pokemons: pokemons['results']
+            pokemons: pokemons
               .map((pokemon) => {
                 return {
-                  name: pokemon['name'],
-                  url: pokemon['url'],
-                  id: parseInt(pokemon['url'].substring(34, (pokemon['url'].length) - 1))
+                  name: pokemon.name,
+                  url: pokemon.url,
+                  id: parseInt(pokemon.url.substring(34, (pokemon['url'].length) - 1))
                 };
               })
           })
@@ -154,7 +154,7 @@ export class PokemonEffects {
           map(
             favoritePokemons => {
               if (favoritePokemons.length < 5) {
-                return PokemonActions.addToFavorite({ id: action.id });
+                return PokemonActions.addToFavorite({ pokemonId: action.pokemonId });
               } else {
                 this.dialog.open(FullAlertComponent);
                 return ({ type: '[Pokemon Favorite] Pokemon Favorites Full Error' });
@@ -173,7 +173,7 @@ export class PokemonEffects {
           map(
             favoritePokemons => {
               let item = [...favoritePokemons];
-              item.splice(item.indexOf(action.id), 1);
+              item.splice(item.indexOf(action.pokemonId), 1);
               return PokemonActions.removeFavorite({
                 favorites: item
               });

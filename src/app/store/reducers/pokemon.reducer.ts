@@ -67,7 +67,7 @@ export const reducer = createReducer(
   on(PokemonActions.addToFavorite, (state, action) => {
     return {
       ...state,
-      favoritePokemons: [...state.favoritePokemons, action.id]
+      favoritePokemons: [...state.favoritePokemons, action.pokemonId]
     }
   }),
   on(PokemonActions.removeFavorite, (state, action) => {

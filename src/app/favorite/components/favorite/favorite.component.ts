@@ -9,15 +9,15 @@ import { favorite, unfavorite } from '../../../store/actions/pokemon.actions';
 })
 export class FavoriteComponent {
   @Input() isFavorite: boolean;
-  @Input() id: string;
+  @Input() pokemonId: string;
   constructor(private store: Store) { }
 
   onFavorite(event: Event) {
     event.stopPropagation();
     if (this.isFavorite) {
-      this.store.dispatch(unfavorite({ id: parseInt(this.id) }));
+      this.store.dispatch(unfavorite({ pokemonId: parseInt(this.pokemonId) }));
     } else {
-      this.store.dispatch(favorite({ id: parseInt(this.id) }));
+      this.store.dispatch(favorite({ pokemonId: parseInt(this.pokemonId) }));
     }
   }
 

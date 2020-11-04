@@ -67,17 +67,17 @@ export const lookFor = createAction(
 
 export const favorite = createAction(
   '[Favorite Icon] Add To Favorite',
-  props<{ id: number }>()
+  props<{ pokemonId: number }>()
 );
 
 export const addToFavorite = createAction(
   '[Store] Save Favorite',
-  props<{ id: number }>()
+  props<{ pokemonId: number }>()
 );
 
 export const unfavorite = createAction(
   '[Favorite Icon] No Favorite',
-  props<{ id: number }>()
+  props<{ pokemonId: number }>()
 );
 
 export const removeFavorite = createAction(

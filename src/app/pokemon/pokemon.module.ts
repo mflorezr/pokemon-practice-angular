@@ -8,8 +8,6 @@ import { InfiniteScrollModule } from 'ngx-infinite-scroll';
 import { FavoriteModule } from '../favorite/favorite.module';
 import { AppRoutingModule } from '../app-routing.module';
 
-
-
 @NgModule({
   declarations: [
     NavBarComponent,

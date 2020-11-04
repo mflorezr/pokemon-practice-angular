@@ -99,6 +99,7 @@
 }
 
 @media (min-width:0px) and (max-width:576px) {
+  
   .modal-body {
     margin: 0.5rem; 
   }
@@ -131,4 +132,5 @@
   .feature-value {
     font-size: var(--mobile-font-size);
   }
+
 }

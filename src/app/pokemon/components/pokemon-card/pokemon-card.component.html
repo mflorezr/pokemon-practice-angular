@@ -1,7 +1,7 @@
-<div class="pokemon-card" (click)="onClickPokemon(pokemon)">
+<div class="pokemon-card" (click)="clickPokemon(pokemon)">
   <div class="pokemon-image-container">
     <img class="pokemon-image" [src]="pokemonImage" [alt]="pokemon.name">
-    <app-favorite class="isFavorite" [isFavorite]="isFavorite" [id]="pokemon.id">
+    <app-favorite class="isFavorite" [isFavorite]="isFavorite" [pokemonId]="pokemon.id">
     </app-favorite>
   </div>
   <div class="pokemon-name">

@@ -55,6 +55,7 @@
 }
 
 @media (min-width:0px) and (max-width:576px) {
+
   .modal-pokemon-name {
     font-size: 0.8rem;
   }
@@ -82,4 +83,5 @@
   .comparison-feature-value { 
     font-size: var(--mobile-font-size);
   } 
+  
 }

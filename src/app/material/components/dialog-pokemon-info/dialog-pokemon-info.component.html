@@ -2,7 +2,7 @@
   <div class="modal-header">
     <div class="modal-pokemon-name">{{currentPokemon.name | uppercase }}</div>
     <div class="modal-buttons">
-      <app-favorite class="isFavorite" [isFavorite]="isFavorite" [id]="currentPokemon.id">
+      <app-favorite class="isFavorite" [isFavorite]="isFavorite" [pokemonId]="currentPokemon.id">
       </app-favorite>
       <div mat-dialog-actions>
         <div class="modal-close-tag" mat-dialog-close>x</div>

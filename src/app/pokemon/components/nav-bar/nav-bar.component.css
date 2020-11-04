@@ -47,6 +47,7 @@
 }
 
 @media (min-width:0px) and (max-width:576px) {
+ 
   .nav-item {
     font-size: 0.7rem;
   }
@@ -64,4 +65,5 @@
     font-size: 0.8rem;
     font-weight: 400;
   }
+  
 }
