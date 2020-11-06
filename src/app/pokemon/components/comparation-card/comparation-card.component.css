@@ -26,7 +26,7 @@
   font-weight: 600;
 }
 
-@media (min-width:0px) and (max-width:576px) {
+@media (min-width: 0px) and (max-width: 576px) {
 
   .comparison-card {
     right: var(--comparison-mobile-font-size);
@@ -45,7 +45,7 @@
   
 }
 
-@media (min-width:576px) and (max-width:768px) {
+@media (min-width: 576px) and (max-width: 768px) {
   
   .comparison-card {
     right: 1rem;

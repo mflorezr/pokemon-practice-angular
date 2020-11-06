@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
 import { map, tap } from 'rxjs/operators';
+import { PokemonList } from 'src/app/models/pokemon-list.model';
 import { Pokemon } from 'src/app/models/pokemon.model';
 import { environment } from 'src/environments/environment';
 import { ApiHttpConnection } from '../../api-http-connection.service';
@@ -17,11 +18,11 @@ export class PokemonListService {
   getAllPokemons(): Observable<Pokemon[]> {
     return this.httpService.getAll(this.url)
       .pipe(
-        tap(pokemonList => {
-          this.setUrl(pokemonList['next']);
+        tap((pokemonList: PokemonList) => {
+          this.setUrl(pokemonList.next);
         }),
         map(pokemons => {
-          return pokemons['results'] as Pokemon[]
+          return pokemons.results
         }),
       );
   }

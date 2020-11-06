@@ -27,7 +27,7 @@ export class PokemonEffects {
                 return {
                   name: pokemon.name,
                   url: pokemon.url,
-                  id: parseInt(pokemon.url.substring(34, (pokemon['url'].length) - 1))
+                  id: parseInt(pokemon.url.substring(34, (pokemon.url.length) - 1))
                 };
               })
           })

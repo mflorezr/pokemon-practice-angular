@@ -91,7 +91,7 @@
  width: 22rem;
 }
 
-@media (min-width:0px) and (max-width:576px) {
+@media (min-width: 0px) and (max-width: 576px) {
 
   .container-pokemon-title {
     width: 20rem;

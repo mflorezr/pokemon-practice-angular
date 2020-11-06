@@ -3,7 +3,7 @@ import { select, Store } from '@ngrx/store';
 import { Subscription } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { selectFavorites } from '../../store/selectors/pokemon.selectors';
-
+import { SliderImage } from '../../models/slider.model'
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -12,7 +12,7 @@ import { selectFavorites } from '../../store/selectors/pokemon.selectors';
 export class HomeComponent implements OnDestroy {
   private url = environment.pokemonImageUrl;
   favoritesSubscription: Subscription;
-  slides = [];
+  slides: SliderImage[];
 
   constructor(private store: Store) {
     this.favoritesSubscription = this.store.pipe(

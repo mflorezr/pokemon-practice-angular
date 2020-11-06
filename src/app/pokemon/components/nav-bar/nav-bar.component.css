@@ -46,7 +46,7 @@
   font-weight: 400;
 }
 
-@media (min-width:0px) and (max-width:576px) {
+@media (min-width: 0px) and (max-width: 576px) {
  
   .nav-item {
     font-size: 0.7rem;

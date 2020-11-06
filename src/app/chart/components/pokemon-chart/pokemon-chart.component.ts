@@ -1,6 +1,8 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { ChartDataSets, ChartOptions, ChartType } from 'chart.js';
 import { Label } from 'ng2-charts';
+import { Stat } from 'src/app/models/pokemon.model';
+import { BAR_CHART_OPTIONS } from './pokemon-chart.constants'
 
 @Component({
   selector: 'app-pokemon-chart',
@@ -8,9 +10,9 @@ import { Label } from 'ng2-charts';
   styleUrls: ['./pokemon-chart.component.css']
 })
 export class PokemonChartComponent implements OnInit {
-  @Input() stats: Array<Array<Object>>;
+  @Input() stats: Array<Array<Stat>>;
 
-  static _barChartOptions: ChartOptions;
+  static _barChartOptions: ChartOptions = BAR_CHART_OPTIONS;
   barChartLabels: Label[] = ['hp', 'attack', 'defense', 'special-attack', 'special-defense', 'speed'];
   barChartType: ChartType = 'bar';
   barChartLegend = false;
@@ -19,47 +21,6 @@ export class PokemonChartComponent implements OnInit {
   colors = ['#167a69', '#26b19c'];
 
   constructor() {
-    PokemonChartComponent._barChartOptions = {
-      responsive: true,
-      title: {
-        display: true,
-        text: 'Stats',
-        fontSize: 17
-      },
-      scales: {
-        yAxes: [{
-          ticks: {
-            beginAtZero: true,
-            stepSize: 25,
-            padding: 5,
-          },
-          gridLines: {
-            display: true,
-            drawOnChartArea: false,
-            color: 'rgb(0, 0, 0)',
-            tickMarkLength: 3
-          },
-        }],
-        xAxes: [{
-          ticks: {
-            padding: 5
-          },
-          gridLines: {
-            display: true,
-            drawOnChartArea: false,
-            color: 'rgb(0, 0, 0)',
-            offsetGridLines: false,
-            tickMarkLength: 5
-          },
-        }]
-      },
-      plugins: {
-        datalabels: {
-          anchor: 'end',
-          align: 'end',
-        }
-      }
-    };
   }
 
   ngOnInit(): void {
@@ -70,7 +31,7 @@ export class PokemonChartComponent implements OnInit {
     this.barChartData = this.stats.map((stat, index) => {
       return {
         data: stat.map(
-          stat => stat["base_stat"]
+          stat => stat.base_stat
         ),
         backgroundColor: this.colors[index % this.colors.length]
       };
