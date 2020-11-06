@@ -4,6 +4,7 @@ import { Subscription } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { selectFavorites } from '../../store/selectors/pokemon.selectors';
 import { SliderImage } from '../../models/slider.model'
+
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
