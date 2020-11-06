@@ -12,13 +12,13 @@ import { BAR_CHART_OPTIONS } from './pokemon-chart.constants'
 export class PokemonChartComponent implements OnInit {
   @Input() stats: Array<Array<Stat>>;
 
-  static _barChartOptions: ChartOptions = BAR_CHART_OPTIONS;
+  barChartOptions: ChartOptions = BAR_CHART_OPTIONS;
   barChartLabels: Label[] = ['hp', 'attack', 'defense', 'special-attack', 'special-defense', 'speed'];
   barChartType: ChartType = 'bar';
   barChartLegend = false;
   barChartPlugins = [];
   barChartData: ChartDataSets[]
-  colors = ['#167a69', '#26b19c'];
+  colors: string[] = ['#167a69', '#26b19c'];
 
   constructor() {
   }
@@ -36,10 +36,6 @@ export class PokemonChartComponent implements OnInit {
         backgroundColor: this.colors[index % this.colors.length]
       };
     });
-  }
-
-  get barChartOptions() {
-    return PokemonChartComponent._barChartOptions;
   }
 
 }
