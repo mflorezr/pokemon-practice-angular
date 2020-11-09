@@ -1,0 +1,63 @@
+<div *ngIf="firstPokemon && secondPokemon">
+  <div class="modal-header">
+    <div class="modal-pokemon-name">
+      {{ firstPokemon.name | uppercase }} VS. {{ secondPokemon.name | uppercase }}
+    </div>
+    <div mat-dialog-actions>
+      <div class="modal-close-tag" mat-dialog-close>x</div>
+    </div>
+  </div>
+  <div class="modal-comparison-images">
+    <div class="comparison-image-container">
+      <img class="comparison-image" [src]="firstPokemon.image" [alt]="firstPokemon.name" />
+    </div>
+    <div class="comparison-image-container">
+      <img class="comparison-image" [src]="secondPokemon.image" [alt]="secondPokemon.name" />
+    </div>
+  </div>
+  <div class="modal-comparison-features">
+    <div class="first-pokemon-features">
+      <div class="comparison-feature-value">
+        {{ firstPokemon.height /10}} m
+      </div>
+      <div class="comparison-feature-value">
+        {{ firstPokemon.weight /10}} kg
+      </div>
+      <div class="comparison-feature-value">
+        {{ firstPokemon.gender }}
+      </div>
+      <div class="comparison-feature-value" *ngFor="let ability of firstPokemon.abilities">
+        {{ ability.ability.name}}
+      </div>
+    </div>
+    <div class="features-names">
+      <div class="comparison-feature-name">
+        Height
+      </div>
+      <div class="comparison-feature-name">
+        Weight
+      </div>
+      <div class="comparison-feature-name">
+        Gender
+      </div>
+      <div class="comparison-feature-name">
+        Abilities
+      </div>
+    </div>
+    <div class="second-pokemon-features">
+      <div class="comparison-feature-value">
+        {{ secondPokemon.height /10}} m
+      </div>
+      <div class="comparison-feature-value">
+        {{ secondPokemon.weight /10}} kg
+      </div>
+      <div class="comparison-feature-value">
+        {{ secondPokemon.gender }}
+      </div>
+      <div class="comparison-feature-value" *ngFor="let ability of secondPokemon.abilities">
+        {{ ability.ability.name}}
+      </div>
+    </div>
+  </div>
+  <app-pokemon-chart [stats]="[firstPokemon.stats, secondPokemon.stats]"></app-pokemon-chart>
+</div>

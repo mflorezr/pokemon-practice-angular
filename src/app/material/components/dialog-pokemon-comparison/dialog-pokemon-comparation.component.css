@@ -1,0 +1,87 @@
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--border-color);
+  align-items: center;
+  padding: 1rem;
+}
+
+.modal-pokemon-name {
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+.modal-close-tag {
+  color: var(--button-compare-bg);
+  font-weight: 500;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.modal-comparison-images {
+  display: flex;
+  margin: 0 2rem;
+  column-gap: 5rem;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.comparison-image-container {
+  width: 10rem;
+}
+
+.comparison-image {
+  width: 100%;
+}
+
+.modal-comparison-features {
+  display: flex;
+  justify-content: center;
+  column-gap: 5rem;
+  text-align: center;
+  padding: 1rem 0;
+  margin: 0 2rem;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.comparison-feature-name {
+  font-size: var(--desktop-font-size);
+  font-weight: 600;
+  padding: 0.1rem 0;
+}
+
+.comparison-feature-value {
+  font-size: var(--desktop-font-size);
+  padding: 0.1rem 0;
+}
+
+@media (min-width: 0px) and (max-width: 576px) {
+
+  .modal-pokemon-name {
+    font-size: 0.8rem;
+  }
+
+  .modal-comparison-images {
+    margin: 0 1rem;
+    column-gap: 2.5rem;
+    justify-content: center;
+  }
+  
+  .comparison-image-container {
+    width: 8rem;
+    margin: 0;
+  }
+  
+  .modal-comparison-features {
+    column-gap: 3rem;
+    margin: 0 2rem;
+  }
+  
+  .comparison-feature-name {
+    font-size: var(--mobile-font-size);
+  }
+  
+  .comparison-feature-value { 
+    font-size: var(--mobile-font-size);
+  } 
+  
+}

@@ -1,0 +1,136 @@
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--border-color);
+  align-items: center;
+  padding: 0.5rem 1rem;
+}
+
+.modal-pokemon-name {
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+.modal-buttons {
+  display: flex;
+  column-gap: 2rem;
+  align-items: center;
+  justify-content: center;
+}
+
+.compareto-button {
+  width: 7rem;
+  cursor: pointer;
+  margin: 0 0.5rem;
+  height: 1.8rem;
+  font-size: 0.8rem;
+  color: var(--modal-bg);
+  background: var(--button-compare-bg);
+  outline: none;
+  border-radius: 0.2rem;
+  border: 1px solid var(--button-compare-bg);
+}
+
+.modal-close-tag {
+  color: var(--button-compare-bg);
+  font-weight: 500;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.modal-body {
+  display: flex;
+  border-bottom: 1px solid var(--border-color);
+  margin: 1rem;
+}
+
+.modal-left-side {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-right: 1rem;
+  margin-top: 1rem;
+}
+
+.modal-image-container {
+  width: 10rem;
+}
+
+.modal-image {
+  width: 100%;
+}
+
+.modal-right-side {
+  width: 18rem;
+}
+
+.modal-description {
+  font-size: var(--desktop-font-size);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.modal-features {
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 2rem;
+  margin: 1rem 0;
+}
+
+.feature {
+  display: flex;
+  flex-direction: column;
+}
+
+.feature-name {
+  font-size: var(--desktop-font-size);
+  font-weight: 600;
+  margin: 0;
+}
+
+.feature-value {
+  margin: 0.5rem 0;
+  font-size: var(--desktop-font-size);
+}
+
+.isFavorite {
+  font-size: 2rem;
+  margin: 0;
+  cursor: pointer;
+}
+
+@media (min-width: 0px) and (max-width: 576px) {
+  
+  .modal-body {
+    margin: 0.5rem; 
+  }
+
+  .modal-pokemon-name {
+    font-size: 0.8rem;
+  }
+  
+  .compareto-button {
+    width: 5rem;
+    font-size: 0.6rem;
+  }
+
+  .modal-image-container {
+    width: 6rem;
+  }
+
+  .modal-description {
+    font-size: var(--mobile-font-size);
+  }
+  
+  .modal-features {
+    column-gap: 1rem;
+  }
+  
+  .feature-name {
+    font-size: var(--mobile-font-size);
+  }
+  
+  .feature-value {
+    font-size: var(--mobile-font-size);
+  }
+
+}

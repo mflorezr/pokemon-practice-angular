@@ -1,0 +1,13 @@
+<div class="nav-bar">
+  <div class="main-nav">
+    <a class="brand-name" routerLink="/">
+      PokéApp
+    </a>
+    <div class="nav-item">
+      Pokemons
+    </div>
+  </div>
+  <div>
+    <input #searchbox class="search-box" type="search" placeholder="Search" (input)="lookFor(searchbox.value)">
+  </div>
+</div>

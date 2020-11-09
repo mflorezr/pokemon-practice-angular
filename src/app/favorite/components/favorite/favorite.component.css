@@ -1,0 +1,9 @@
+.material-icons {
+  cursor: pointer;
+  font-size: 2rem;
+  color: var(--favorite-color);
+}
+
+.material-icons:focus {
+  outline: none;
+}

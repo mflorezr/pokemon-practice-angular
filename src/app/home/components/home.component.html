@@ -1,0 +1,18 @@
+<div class="home">
+  <div class="backdrop-home">
+    <div class="container-pokemon-title">
+      <img class="pokemon-title-image" src="assets/images/title.png" alt="pokemon-logo" />
+    </div>
+    <div class="welcome"> Welcome to Poketionary! </div>
+    <p class="welcome-description">
+      Know everything you need to know about these awesome creatures
+      of the Pokemon World and choose your best competitor
+    </p>
+    <carousel *ngIf="slides.length >0" class="carousel" [images]="slides" [height]="200" [autoplayInterval]="1500"
+      [cellsToShow]="1" [loop]="true" [autoplay]="true" [dots]="false" [objectFit]="0" [pauseOnHover]="true">
+    </carousel>
+    <a routerLink="/pokemon-list">
+      <button class="goto-pokemons"> LETS GO</button>
+    </a>
+  </div>
+</div>

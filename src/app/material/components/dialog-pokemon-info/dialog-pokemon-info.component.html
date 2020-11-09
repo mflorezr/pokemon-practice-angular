@@ -1,0 +1,74 @@
+<div *ngIf="currentPokemon">
+  <div class="modal-header">
+    <div class="modal-pokemon-name">{{currentPokemon.name | uppercase }}</div>
+    <div class="modal-buttons">
+      <app-favorite class="isFavorite" [isFavorite]="isFavorite" [pokemonId]="currentPokemon.id">
+      </app-favorite>
+      <div mat-dialog-actions>
+        <div class="modal-close-tag" mat-dialog-close>x</div>
+      </div>
+    </div>
+  </div>
+  <div class="modal-body">
+    <div class="modal-left-side">
+      <div class="modal-image-container">
+        <img class="modal-image" src="{{ currentPokemon.image }}" alt="{{ currentPokemon.name }}">
+      </div>
+      <button class="compareto-button" mat-dialog-close (click)="onCompareTo()">Compare to</button>
+    </div>
+    <div class="modal-right-side">
+      <div class="modal-description">
+        <p>
+          {{ currentPokemon.description }}
+        </p>
+      </div>
+      <div class="modal-features">
+        <div class="feature">
+          <div class="feature-name">
+            Height
+          </div>
+          <div class="feature-value">
+            {{ currentPokemon.height/ 10  }} m
+          </div>
+        </div>
+        <div class="feature">
+          <div class="feature-name">
+            Weight
+          </div>
+          <div class="feature-value">
+            {{ currentPokemon.weight/ 10 }} kg
+          </div>
+        </div>
+        <div class="feature">
+          <div class="feature-name">
+            Gender
+          </div>
+          <div class="feature-value">
+            {{ currentPokemon.gender  }}
+          </div>
+        </div>
+        <div class="feature">
+          <div class="feature-name">
+            Abilities
+          </div>
+          <ul class="feature-value">
+            <li *ngFor="let ability of currentPokemon.abilities">
+              {{ ability.ability.name }}
+            </li>
+          </ul>
+        </div>
+        <div class="feature">
+          <div class="feature-name">
+            Types
+          </div>
+          <ul class="feature-value">
+            <li *ngFor="let type of currentPokemon.types">
+              {{ type.type.name }}
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <app-pokemon-chart [stats]="[currentPokemon.stats]"></app-pokemon-chart>
+</div>
